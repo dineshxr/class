@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-1: 0 85% 60%;
+  --color-2: 255 85% 60%;
+  --color-3: 155 85% 60%;
+  --color-4: 55 85% 60%;
+  --color-5: 305 85% 60%;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.rainbow-button {
+  --primary: #fff;
+  --primary-foreground: #000;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  border-radius: 0.75rem;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--color-1)) 0%,
+    hsl(var(--color-2)) 20%,
+    hsl(var(--color-3)) 40%,
+    hsl(var(--color-4)) 60%,
+    hsl(var(--color-5)) 80%,
+    hsl(var(--color-1)) 100%
+  );
+  background-size: 200% auto;
+  animation: rainbow 3s linear infinite;
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.rainbow-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  filter: brightness(1.1);
+}
